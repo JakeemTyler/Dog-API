@@ -1,0 +1,86 @@
+#header{
+    margin-top: -40px;
+    width: 100%;
+    height: 800px;
+    padding-bottom: 5px;
+}
+#header img{
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%, 50%;
+    /* background-image: url(images/paw.jpeg); */
+    background-color: rgb(55, 66, 117);
+}
+
+h1{
+    color:rgb(234, 152, 11);
+    text-align: center;
+    /* background-color: rgb(128, 58, 150); */
+}
+
+h2{
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(209, 0, 0);
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* #nameList{
+    border: 5px dashed  rgb(128, 0, 0);
+    height: 300px;
+    background-color: white;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+    padding-left: 20px;  
+    background-image: url(images/searched.png);
+} */
+
+#wrapper{
+    border: 5px dashed  rgb(151, 96, 0);
+    background-color:  rgb(230, 236, 246);
+    width: 100%; 
+    padding-top: 1px;
+    padding-left: 22px;
+    padding-bottom: 1px; 
+    color: rgb(55, 66, 117);
+    font-size: x-large;
+}
+#city{
+padding-left: 0px; 
+width: 500px;  
+ background-color: aliceblue;
+    color: black;
+}
+
+button {
+  background-color: rgb(210, 14, 4);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 251, 244);
+    height: 25px;
+    width: 200px;
+    font-weight: bold;
+font-size: large;}
+
+label{
+    color:rgb(210, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.report{
+    text-align: center;
+}

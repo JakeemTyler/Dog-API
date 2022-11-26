@@ -1,0 +1,115 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Weather Watch</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="quotes.css" />
+
+  </head>
+  <body>
+    <h1>Welcome to finding your new furry friend!</h1>
+    <br>
+    <br>
+    <div id="header">
+      <img src="images/header.jpeg" alt="header">
+    </div>
+    <div id="h2">
+ <h2>Welcome to finding your future pet! Just type in the name of a pet you see below and find more information about them in the report box! </h2>
+    </div>
+
+    <br>
+            <label for="city"> Search </label
+          ><input
+            type="text"
+            id="city"
+            name="city"
+            value=""
+            maxlength="100"
+            size="20"
+          />
+          <button id="button" onclick="getData()">State Search</button>  
+    </div>
+  
+    <br>
+    <br>
+<!-- <div id="nameList"></div> -->
+      <img src="images/searched.png" alt="">
+    <br>
+    <br>
+    <div id="wrapper">
+
+    <script>
+      // Get data from the API
+      const process = (data) => {
+        console.log(data);
+        // pulling up display when the user input is chosen
+
+          let dogStatement = $(`<div id = "box"><br><b>Name: </b> ${data[0].name}
+                                <br>
+                                <br>
+                                 <b>Gender: </b> ${data[0].gender}
+                                 <br>
+                                 <br>
+                                 <b>Breed: </b> ${data[0].breed}
+                                 <br>
+                                 <br>
+                                 <b>Age: </b> ${data[0].age}
+                                  <br>
+                                  <br>
+                                 <b>Favorite Treat: </b> ${data[0].treat}
+                                  <ul></ul></div><br>`
+                                );
+
+// append the previous data and text string to the data
+          $(".report").append(dogStatement);
+      };
+      // setting up function for getting user input 
+      const getData = () => {
+        // get user input from the city id on the button id
+        let name = $("#city").val();
+        $.ajax({
+          type: "GET",
+          url: "https://cit-doghouse-api.uc.r.appspot.com/api/v1/dogs/name/" + name,
+          dataType: "json",
+          success: function (result, status, xhr) {
+            process(result);
+          },
+          error: function (xhr, status, error) {
+            alert(
+              "Result: " +
+                status +
+                " " +
+                error +
+                " " +
+                xhr.status +
+                " " +
+                xhr.statusText
+            );
+          },
+        });
+      };
+// 
+
+      const setUp = ()=>{
+     let report = $(`<div class="report"> <h1>Report:</h1><ul></ul> </div>`);
+        $("#wrapper").append(report);
+      };
+
+// creates hover over button, returns to normal state after
+$("#button").hover(function(){
+    $(this).css("background-color", "rgb(154, 8, 0)");
+    }, function(){
+    $(this).css("background-color", "rgb(210, 14, 4)");
+  });
+  $(document).ready(setUp);
+
+    </script>
+
+    </div>
+  </body>
+</html>
